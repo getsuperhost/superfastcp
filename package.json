@@ -8,23 +8,24 @@
     "watch": "mix watch",
     "watch-poll": "mix watch -- --watch-options-poll=1000",
     "hot": "mix watch --hot",
-    "production": "mix --production"
-    ,"audit:ci": "npm audit --audit-level=high"
+    "production": "mix --production",
+    "audit:ci": "npm audit --audit-level=moderate"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "laravel-mix": "^6.0.27",
-    "vue-loader": "^15.9.8",
-    "vue-template-compiler": "^2.6.14"
+    "laravel-mix": "^6.0.49",
+    "@vue/compiler-sfc": "^3.5.24",
+    "vue-loader": "^17.4.2"
   },
   "dependencies": {
     "axios": "^1.13.2",
-    "vue": "^2.6.14",
-    "vue-loading-overlay": "^3.4.2",
-    "vue-router": "^3.5.2",
-    "vue-simple-context-menu": "^3.4.1",
-    "vuex": "^3.6.2"
+    "mitt": "^3.0.0",
+    "vue": "^3.5.24",
+    "vue-loading-overlay": "^6.0.6",
+    "vue-router": "^4.6.3",
+    "vue-simple-context-menu": "^4.1.0",
+    "vuex": "^4.1.0"
   }
 }

@@ -145,6 +145,23 @@ npx @github/copilot --version
 
 If you want me to add a `scripts/install-copilot.sh` maker to the repo, I’ve added one under `/scripts/install-copilot.sh` which checks Node version and suggests / runs installation safely.
 
+## GitHub CLI (gh) — optional
+
+You can use the GitHub CLI to create PRs, interact with issues, and manage workflows. To install it without needing sudo, run the helper script included in the repo:
+
+```bash
+./scripts/install-gh.sh
+```
+
+This script downloads the latest gh release and installs the `gh` binary to `$HOME/.local/bin`. If you prefer using a package manager, follow the official instructions at: https://cli.github.com/manual/installation
+
+To authenticate with GitHub after installing, run:
+```bash
+gh auth login
+```
+Follow interactive prompts and select your preferred authentication method (browser or token).
+
+
 
 ## Optional: Using MySQL for local development
 - Create a local MySQL server and set environment variables `FASTCP_SQL_USER` and `FASTCP_SQL_PASSWORD` before running migrations. Also update `fastcp/settings.py` or set `DATABASES` via environment variables if needed.
