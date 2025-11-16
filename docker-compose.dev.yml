@@ -1,0 +1,33 @@
+version: '3.8'
+services:
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpw
+      MYSQL_DATABASE: fastcp
+      MYSQL_USER: fastcp
+      MYSQL_PASSWORD: fastcppw
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - 3306:3306
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./:/app
+    ports:
+      - 8001:8000
+    environment:
+      IS_DEBUG: '1'
+      FASTCP_SQL_USER: fastcp
+      FASTCP_SQL_PASSWORD: fastcppw
+      FILE_MANAGER_ROOT: /tmp/fastcp-fm
+      LETSENCRYPT_IS_STAGING: '1'
+    depends_on:
+      - db
+
+volumes:
+  db_data:
